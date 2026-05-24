@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xpwzabcd'
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoevnvk'
 
 const drinkOptions = ['Вино', 'Шампанское', 'Крепкий алкоголь', 'Безалкогольное', 'Другое']
 

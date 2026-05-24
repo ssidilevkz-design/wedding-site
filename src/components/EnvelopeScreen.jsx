@@ -5,22 +5,22 @@ const SEGMENTS = [
   {
     text: 'Дорогой читатель\n',
     className: 'font-script text-gold block',
-    style: { fontSize: 'clamp(0.8rem, 5vw, 3.9rem)', lineHeight: 1.0 },
+    style: { fontSize: 'clamp(0.72rem, 4.5vw, 3.5rem)', lineHeight: 1.0 },
   },
   {
     text: 'стало известно, что в этом сезоне состоится долгожданное событие!\n\n',
     className: 'font-serif text-charcoal/65 block italic',
-    style: { fontSize: 'clamp(0.65rem, 3.5vw, 1.8rem)', fontWeight: 300, lineHeight: 1.3 },
+    style: { fontSize: 'clamp(0.58rem, 3.15vw, 1.6rem)', fontWeight: 300, lineHeight: 1.3 },
   },
   {
     text: 'свадьба Алёны и Сергея\n\n',
     className: 'font-script text-gold block',
-    style: { fontSize: 'clamp(0.8rem, 4.2vw, 3.3rem)', lineHeight: 1.0 },
+    style: { fontSize: 'clamp(0.72rem, 3.8vw, 3.0rem)', lineHeight: 1.0 },
   },
   {
     text: 'и, разумеется, без вас этот день не будет таким особенным!\nОни с нетерпением будут ждать вас на своем празднике!',
     className: 'font-serif text-charcoal/65 block italic',
-    style: { fontSize: 'clamp(0.65rem, 3.5vw, 1.8rem)', fontWeight: 300, lineHeight: 1.3 },
+    style: { fontSize: 'clamp(0.58rem, 3.15vw, 1.6rem)', fontWeight: 300, lineHeight: 1.3 },
   },
 ]
 

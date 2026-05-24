@@ -5,12 +5,12 @@ const SEGMENTS = [
   {
     text: 'Дорогой читатель\n',
     className: 'font-script text-gold block',
-    style: { fontSize: 'clamp(1.6rem, 5.25vw, 3.9rem)', lineHeight: 1.0 },
+    style: { fontSize: 'clamp(1.0rem, 5.25vw, 3.9rem)', lineHeight: 1.0 },
   },
   {
     text: 'стало известно, что в этом сезоне состоится долгожданное событие!\n\n',
     className: 'font-serif text-charcoal/65 block italic',
-    style: { fontSize: 'clamp(1.5rem, 2.4vw, 1.8rem)', fontWeight: 300, lineHeight: 1.3 },
+    style: { fontSize: 'clamp(1.0rem, 2.4vw, 1.8rem)', fontWeight: 300, lineHeight: 1.3 },
   },
   {
     text: 'свадьба Алёны и Сергея\n\n',
@@ -20,7 +20,7 @@ const SEGMENTS = [
   {
     text: 'и, разумеется, без вас этот день не будет таким особенным!\nОни с нетерпением будут ждать вас на своем празднике!',
     className: 'font-serif text-charcoal/65 block italic',
-    style: { fontSize: 'clamp(1.5rem, 2.4vw, 1.8rem)', fontWeight: 300, lineHeight: 1.3 },
+    style: { fontSize: 'clamp(1.0rem, 2.4vw, 1.8rem)', fontWeight: 300, lineHeight: 1.3 },
   },
 ]
 
@@ -139,7 +139,7 @@ export default function EnvelopeScreen({ onOpen }) {
             />
 
             {/* Text overlay — lower blank area of the letter */}
-            <div className="absolute inset-0 flex justify-center" style={{ paddingTop: '54vh' }}>
+            <div className="absolute inset-0 flex justify-center pt-[44vh] sm:pt-[54vh]">
               <div
                 className="text-center"
                 style={{ width: 'min(560px, 82vw)' }}

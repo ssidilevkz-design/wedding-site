@@ -33,7 +33,8 @@ export default function Hero() {
 
       {/* Text — top of section */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 flex flex-col items-center text-center px-4 pb-8 sm:pb-14 z-10"
+        className="absolute left-0 right-0 flex flex-col items-center text-center px-4 z-10"
+        style={{ top: '50%', transform: 'translateY(-50%)' }}
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}

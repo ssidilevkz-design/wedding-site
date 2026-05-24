@@ -39,39 +39,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        <div className="relative inline-block px-5 py-4 sm:px-16 sm:py-8">
-          {/* Baroque cartouche frame */}
-          <svg
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 300 160"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Fill */}
-            <motion.path
-              d="M50,8 Q150,0 250,8 C252,22 296,24 296,38 Q305,80 296,122 C296,136 252,138 250,152 Q150,160 50,152 C48,138 4,136 4,122 Q-5,80 4,38 C4,24 48,22 50,8Z"
-              animate={{ fill: isNight ? 'rgba(15,12,10,0.32)' : 'rgba(250,246,238,0.88)' }}
-              transition={{ duration: 4, ease: 'easeInOut' }}
-            />
-            {/* Outer border */}
-            <motion.path
-              d="M50,8 Q150,0 250,8 C252,22 296,24 296,38 Q305,80 296,122 C296,136 252,138 250,152 Q150,160 50,152 C48,138 4,136 4,122 Q-5,80 4,38 C4,24 48,22 50,8Z"
-              fill="none"
-              strokeWidth="1.8"
-              animate={{ stroke: isNight ? 'rgba(200,169,106,0.55)' : 'rgba(200,169,106,0.85)' }}
-              transition={{ duration: 4 }}
-            />
-            {/* Inner border */}
-            <motion.path
-              d="M57,14 Q150,7 243,14 C245,26 288,28 288,41 Q296,80 288,119 C288,132 245,134 243,146 Q150,153 57,146 C55,134 12,132 12,119 Q4,80 12,41 C12,28 55,26 57,14Z"
-              fill="none"
-              strokeWidth="0.7"
-              animate={{ stroke: isNight ? 'rgba(200,169,106,0.3)' : 'rgba(200,169,106,0.55)' }}
-              transition={{ duration: 4 }}
-            />
-          </svg>
-
-          <div className="relative z-10 text-center">
+        <div className="text-center">
             <motion.p
               className="font-sans tracking-[0.35em] uppercase mb-3"
               style={{ fontSize: 'clamp(0.6rem, 1.5vw, 0.8rem)' }}
@@ -89,7 +57,6 @@ export default function Hero() {
             >
               Алёна & Сергей
             </motion.h1>
-          </div>
         </div>
       </motion.div>
 

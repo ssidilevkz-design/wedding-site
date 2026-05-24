@@ -137,7 +137,7 @@ export default function EnvelopeScreen({ onOpen }) {
             />
 
             {/* Text overlay positioned inside the letter's blank area */}
-            <div className="absolute inset-0 flex justify-center pt-[64vh] sm:pt-[54vh]">
+            <div className="absolute inset-0 flex justify-center pt-[54vh] sm:pt-[54vh]">
               <div
                 className="text-center"
                 style={{ width: 'min(420px, 54vw)' }}

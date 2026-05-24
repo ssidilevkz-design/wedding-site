@@ -30,40 +30,43 @@ const SEG_OFFSETS = SEGMENTS.reduce((acc, seg, i) => {
 }, [])
 const TOTAL_CHARS = SEGMENTS.reduce((s, seg) => s + seg.text.length, 0)
 
-export default function EnvelopeScreen({ onOpen }) {
+// Duration of in.mp3 part inside combined.m4a
+const INTRO_DURATION = 18.6
+
+export default function EnvelopeScreen({ onOpen, audioRef }) {
   const [phase, setPhase] = useState('idle')
   const [showHint, setShowHint] = useState(false)
   const [revealedCount, setRevealedCount] = useState(0)
-  const audioRef = useRef(null)
   const videoRef = useRef(null)
   const rafRef = useRef(null)
-  const musicDoneRef = useRef(false)
 
   useEffect(() => {
     const t = setTimeout(() => setShowHint(true), 2000)
 
-    const audio = new Audio('/music/in.mp3')
-    audio.volume = 0.9
-    audioRef.current = audio
-    audio.addEventListener('ended', () => {
-      musicDoneRef.current = true
-      setRevealedCount(TOTAL_CHARS)
-      setTimeout(onOpen, 1000)
-    })
+    const audio = audioRef.current
+    if (audio) {
+      // Trigger onOpen when the in.mp3 intro part finishes
+      function handleTimeUpdate() {
+        if (audio.currentTime >= INTRO_DURATION) {
+          audio.removeEventListener('timeupdate', handleTimeUpdate)
+          setRevealedCount(TOTAL_CHARS)
+          setTimeout(onOpen, 1000)
+        }
+      }
+      audio.addEventListener('timeupdate', handleTimeUpdate)
+    }
 
     return () => {
       clearTimeout(t)
       cancelAnimationFrame(rafRef.current)
-      audio.pause()
-      audio.src = ''
     }
   }, [])
 
   function startReveal() {
     const audio = audioRef.current
+    if (!audio) return
     function tick() {
-      if (!audio.duration) { rafRef.current = requestAnimationFrame(tick); return }
-      const progress = Math.min(audio.currentTime / audio.duration, 1)
+      const progress = Math.min(audio.currentTime / INTRO_DURATION, 1)
       setRevealedCount(Math.floor(progress * TOTAL_CHARS))
       if (progress < 1) rafRef.current = requestAnimationFrame(tick)
     }
@@ -149,21 +152,10 @@ export default function EnvelopeScreen({ onOpen }) {
         )}
       </AnimatePresence>
 
-      {/* Skip button */}
-      <button
-        onClick={onOpen}
-        className="absolute top-5 right-5 z-50 w-10 h-10 flex items-center justify-center rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300"
-        aria-label="Пропустить"
-      >
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-          <path d="M2 2L16 16M16 2L2 16" stroke="#C8A96A" strokeWidth="1.5" strokeLinecap="round"/>
-        </svg>
-      </button>
-
       {/* Hint */}
       <AnimatePresence>
         {showHint && phase === 'idle' && (
-          <div className="absolute inset-0 flex items-end justify-center pointer-events-none" style={{ paddingBottom: '60%' }}>
+          <div className="absolute inset-0 flex items-end justify-center pointer-events-none" style={{ paddingBottom: '50%' }}>
             <motion.p
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: [0, 1, 0.6, 1], y: 0 }}

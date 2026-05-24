@@ -15,23 +15,17 @@ import MusicPlayer from './components/MusicPlayer'
 
 export default function App() {
   const [envelopeOpen, setEnvelopeOpen] = useState(false)
-  const bgAudioRef = useRef(null)
+  const audioRef = useRef(null)
 
   useEffect(() => {
-    const audio = new Audio('/music/bri.m4a')
-    audio.loop = true
-    audio.volume = 0.35
-    bgAudioRef.current = audio
+    const audio = new Audio('/music/combined.m4a')
+    audio.volume = 0.7
+    audioRef.current = audio
     return () => {
       audio.pause()
       audio.src = ''
     }
   }, [])
-
-  function handleOpen() {
-    bgAudioRef.current?.play().catch(() => {})
-    setEnvelopeOpen(true)
-  }
 
   return (
     <>
@@ -39,7 +33,8 @@ export default function App() {
         {!envelopeOpen ? (
           <EnvelopeScreen
             key="envelope"
-            onOpen={handleOpen}
+            audioRef={audioRef}
+            onOpen={() => setEnvelopeOpen(true)}
           />
         ) : (
           <motion.div
@@ -58,7 +53,7 @@ export default function App() {
             <OurPhoto />
             <PSNote />
             <Footer />
-            <MusicPlayer audioRef={bgAudioRef} />
+            <MusicPlayer audioRef={audioRef} />
           </motion.div>
         )}
       </AnimatePresence>

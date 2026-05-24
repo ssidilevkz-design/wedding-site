@@ -1,33 +1,20 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export default function MusicPlayer() {
+export default function MusicPlayer({ audioRef }) {
   const [playing, setPlaying] = useState(false)
-  const [loaded, setLoaded] = useState(false)
   const [showLabel, setShowLabel] = useState(true)
-  const audioRef = useRef(null)
 
   useEffect(() => {
-    const audio = new Audio('/music/bri.m4a')
-    audio.loop = true
-    audio.volume = 0.35
-    audioRef.current = audio
-
-    audio.addEventListener('canplaythrough', () => {
-      setLoaded(true)
-      audio.play().then(() => setPlaying(true)).catch(() => {})
-    })
-
+    const audio = audioRef?.current
+    if (!audio) return
+    setPlaying(!audio.paused)
     const t = setTimeout(() => setShowLabel(false), 5000)
-    return () => {
-      clearTimeout(t)
-      audio.pause()
-      audio.src = ''
-    }
+    return () => clearTimeout(t)
   }, [])
 
   function toggle() {
-    const audio = audioRef.current
+    const audio = audioRef?.current
     if (!audio) return
     setShowLabel(false)
     if (playing) {

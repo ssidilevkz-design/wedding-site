@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import EnvelopeScreen from './components/EnvelopeScreen'
@@ -15,12 +15,32 @@ import MusicPlayer from './components/MusicPlayer'
 
 export default function App() {
   const [envelopeOpen, setEnvelopeOpen] = useState(false)
+  const bgAudioRef = useRef(null)
+
+  useEffect(() => {
+    const audio = new Audio('/music/bri.m4a')
+    audio.loop = true
+    audio.volume = 0.35
+    bgAudioRef.current = audio
+    return () => {
+      audio.pause()
+      audio.src = ''
+    }
+  }, [])
+
+  function handleOpen() {
+    bgAudioRef.current?.play().catch(() => {})
+    setEnvelopeOpen(true)
+  }
 
   return (
     <>
       <AnimatePresence mode="wait">
         {!envelopeOpen ? (
-          <EnvelopeScreen key="envelope" onOpen={() => setEnvelopeOpen(true)} />
+          <EnvelopeScreen
+            key="envelope"
+            onOpen={handleOpen}
+          />
         ) : (
           <motion.div
             key="main"
@@ -38,7 +58,7 @@ export default function App() {
             <OurPhoto />
             <PSNote />
             <Footer />
-            <MusicPlayer />
+            <MusicPlayer audioRef={bgAudioRef} />
           </motion.div>
         )}
       </AnimatePresence>

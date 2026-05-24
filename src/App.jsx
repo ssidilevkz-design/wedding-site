@@ -9,6 +9,7 @@ import OrderOfTheDay from './components/OrderOfTheDay'
 import DressCode from './components/DressCode'
 import Accommodation from './components/Accommodation'
 import OurPhoto from './components/OurPhoto'
+import PSNote from './components/PSNote'
 import RSVP from './components/RSVP'
 import MusicPlayer from './components/MusicPlayer'
 
@@ -35,6 +36,7 @@ export default function App() {
             <Accommodation />
             <RSVP />
             <OurPhoto />
+            <PSNote />
             <Footer />
             <MusicPlayer />
           </motion.div>

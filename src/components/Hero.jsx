@@ -13,18 +13,18 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden bg-[#FAF6EE]">
 
       {/* Images — natural proportions, anchored to bottom */}
-      <div className="absolute bottom-0 left-0 w-full">
+      <div className="absolute inset-0">
         <img
           src="/images/day_new.png"
           alt=""
           aria-hidden="true"
-          className="w-full block pointer-events-none select-none"
+          className="w-full h-full object-cover object-top pointer-events-none select-none"
         />
         <motion.img
           src="/images/night_new.png"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full block pointer-events-none select-none"
+          className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: isNight ? 1 : 0 }}
           transition={{ duration: 5, ease: 'easeInOut' }}

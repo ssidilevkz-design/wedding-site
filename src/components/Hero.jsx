@@ -5,7 +5,7 @@ export default function Hero() {
   const [isNight, setIsNight] = useState(false)
 
   useEffect(() => {
-    const t = setTimeout(() => setIsNight(true), 3000)
+    const t = setTimeout(() => setIsNight(true), 2000)
     return () => clearTimeout(t)
   }, [])
 

@@ -139,10 +139,10 @@ export default function EnvelopeScreen({ onOpen }) {
             />
 
             {/* Text overlay — lower blank area of the letter */}
-            <div className="absolute inset-0 flex justify-center pt-[48vh] sm:pt-[54vh]">
+            <div className="absolute inset-0 flex justify-center pt-[64vh] sm:pt-[54vh]">
               <div
                 className="text-center"
-                style={{ width: 'min(480px, 66vw)' }}
+                style={{ width: 'min(420px, 56vw)' }}
               >
                 <SyncedText revealedCount={revealedCount} />
               </div>

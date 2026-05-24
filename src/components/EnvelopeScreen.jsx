@@ -10,7 +10,7 @@ const SEGMENTS = [
   {
     text: 'стало известно, что в этом сезоне состоится долгожданное событие!\n\n',
     className: 'font-serif text-charcoal/65 block italic',
-    style: { fontSize: 'clamp(0.58rem, 3.15vw, 1.6rem)', fontWeight: 300, lineHeight: 1.3 },
+    style: { fontSize: 'clamp(0.6rem, 3.2vw, 1.6rem)', fontWeight: 300, lineHeight: 1.3 },
   },
   {
     text: 'свадьба Алёны и Сергея\n\n',
@@ -20,7 +20,7 @@ const SEGMENTS = [
   {
     text: 'и, разумеется, без вас этот день не будет таким особенным!\nОни с нетерпением будут ждать вас на своем празднике!',
     className: 'font-serif text-charcoal/65 block italic',
-    style: { fontSize: 'clamp(0.58rem, 3.15vw, 1.6rem)', fontWeight: 300, lineHeight: 1.3 },
+    style: { fontSize: 'clamp(0.6rem, 3.2vw, 1.6rem)', fontWeight: 300, lineHeight: 1.3 },
   },
 ]
 
@@ -140,7 +140,7 @@ export default function EnvelopeScreen({ onOpen }) {
             <div className="absolute inset-0 flex justify-center pt-[52vh] sm:pt-[54vh]">
               <div
                 className="text-center"
-                style={{ width: 'min(420px, 54vw)' }}
+                style={{ width: 'min(420px, 48vw)' }}
               >
                 <SyncedText revealedCount={revealedCount} />
               </div>

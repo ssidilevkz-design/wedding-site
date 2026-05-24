@@ -5,7 +5,7 @@ const SEGMENTS = [
   {
     text: 'Дорогой читатель\n',
     className: 'font-script text-gold block',
-    style: { fontSize: 'clamp(2.7rem, 5.25vw, 3.9rem)', lineHeight: 1.0 },
+    style: { fontSize: 'clamp(1.6rem, 5.25vw, 3.9rem)', lineHeight: 1.0 },
   },
   {
     text: 'стало известно, что в этом сезоне состоится долгожданное событие!\n\n',
@@ -15,7 +15,7 @@ const SEGMENTS = [
   {
     text: 'свадьба Алёны и Сергея\n\n',
     className: 'font-script text-gold block',
-    style: { fontSize: 'clamp(2.4rem, 4.5vw, 3.3rem)', lineHeight: 1.0 },
+    style: { fontSize: 'clamp(1.4rem, 4.5vw, 3.3rem)', lineHeight: 1.0 },
   },
   {
     text: 'и, разумеется, без вас этот день не будет таким особенным!\nОни с нетерпением будут ждать вас на своем празднике!',
@@ -142,7 +142,7 @@ export default function EnvelopeScreen({ onOpen }) {
             <div className="absolute inset-0 flex justify-center" style={{ paddingTop: '54vh' }}>
               <div
                 className="text-center"
-                style={{ width: 'min(560px, 55vw)' }}
+                style={{ width: 'min(560px, 82vw)' }}
               >
                 <SyncedText revealedCount={revealedCount} />
               </div>
@@ -172,7 +172,7 @@ export default function EnvelopeScreen({ onOpen }) {
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2 }}
               className="font-sans tracking-[0.25em] uppercase whitespace-nowrap"
-              style={{ color: '#C8A96A', fontSize: '2.2rem' }}
+              style={{ color: '#C8A96A', fontSize: 'clamp(1rem, 4.5vw, 2.2rem)' }}
             >
               Нажмите, чтобы открыть
             </motion.p>

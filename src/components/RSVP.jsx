@@ -104,7 +104,7 @@ export default function RSVP() {
             <motion.form
               key="form"
               onSubmit={handleSubmit}
-              className="px-10 py-10 space-y-8"
+              className="px-5 py-8 sm:px-10 sm:py-10 space-y-6"
               initial={{ opacity: 1 }}
               exit={{ opacity: 0, y: -10 }}
               style={{
@@ -206,7 +206,7 @@ export default function RSVP() {
                 <button
                   type="submit"
                   disabled={submitting || !form.name}
-                  className="btn-gold disabled:opacity-40 disabled:cursor-not-allowed min-w-48"
+                  className="btn-gold disabled:opacity-40 disabled:cursor-not-allowed w-full sm:w-auto sm:min-w-48"
                 >
                   {submitting ? 'Отправляю...' : 'Отправить ответ'}
                 </button>

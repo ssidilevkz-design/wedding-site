@@ -51,7 +51,7 @@ export default function DressCode() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-          <CartoucheCard className="px-14 pb-12 text-center" style={{ paddingTop: '3rem' }}>
+          <CartoucheCard className="px-5 pb-8 sm:px-14 sm:pb-12 text-center" style={{ paddingTop: '2rem' }}>
             <div>
               {/* Two text blocks */}
               <motion.div

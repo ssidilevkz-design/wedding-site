@@ -33,12 +33,12 @@ export default function Hero() {
 
       {/* Text — top of section */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 flex flex-col items-center text-center px-6 pb-14 z-10"
+        className="absolute bottom-0 left-0 right-0 flex flex-col items-center text-center px-4 pb-8 sm:pb-14 z-10"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        <div className="relative inline-block px-16 py-8">
+        <div className="relative inline-block px-5 py-4 sm:px-16 sm:py-8">
           {/* Baroque cartouche frame */}
           <svg
             className="absolute inset-0 w-full h-full"
@@ -82,7 +82,7 @@ export default function Hero() {
 
             <motion.h1
               className="font-script leading-none"
-              style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', whiteSpace: 'nowrap' }}
+              style={{ fontSize: 'clamp(2rem, 8vw, 8rem)' }}
               animate={{ color: isNight ? '#FFFFFF' : '#C8A96A' }}
               transition={{ duration: 4, ease: 'easeInOut' }}
             >

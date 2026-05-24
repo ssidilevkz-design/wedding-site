@@ -48,7 +48,7 @@ function Footer() {
   return (
     <footer className="text-center py-12 px-6" style={{ background: '#FAF6EE' }}>
       <div className="ornament-divider mb-8 max-w-xs mx-auto opacity-60" />
-      <p className="font-script text-gold mb-1" style={{ fontSize: '2rem' }}>
+      <p className="font-script text-gold mb-1" style={{ fontSize: 'clamp(1.4rem, 5vw, 2rem)' }}>
         Алёна & Сергей
       </p>
       <p className="font-sans text-charcoal/40 text-xs tracking-[0.2em] uppercase">

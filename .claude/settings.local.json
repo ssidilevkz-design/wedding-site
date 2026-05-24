@@ -28,7 +28,10 @@
       "Bash(sed -i '' \"s/linear-gradient\\(180deg, #C5DCE8 0%, #B8D4E0 50%, #C5DCE8 100%\\)/#FAF6EE/g\" /Users/alfa/Documents/site/src/components/RSVP.jsx)",
       "Bash(sed -i '' \"s/linear-gradient\\(180deg, #C5DCE8 0%, #B8D4E0 60%, #C5DCE8 100%\\)/#FAF6EE/g\" /Users/alfa/Documents/site/src/components/OurPhoto.jsx)",
       "Bash(ffprobe -v quiet -show_entries format=duration -of csv=p=0 /Users/alfa/Documents/site/public/music/in.mp3)",
-      "Bash(pkill -f \"vite\")"
+      "Bash(pkill -f \"vite\")",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }

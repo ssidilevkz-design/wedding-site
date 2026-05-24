@@ -59,7 +59,7 @@ export default function Countdown() {
           <motion.div key={key} variants={cardVariants} className="flex flex-col items-center text-center py-4">
             <span
               className="font-serif text-charcoal tabular-nums leading-none"
-              style={{ fontSize: 'clamp(2.8rem, 9vw, 4.2rem)', fontWeight: 300 }}
+              style={{ fontSize: 'clamp(1.8rem, 8vw, 4.2rem)', fontWeight: 300 }}
             >
               {String(timeLeft[key]).padStart(2, '0')}
             </span>

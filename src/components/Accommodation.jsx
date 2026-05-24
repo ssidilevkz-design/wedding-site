@@ -27,7 +27,7 @@ export default function Accommodation() {
       transition={{ duration: 0.8 }}
     >
       <div className="max-w-2xl mx-auto px-6 text-center mb-12">
-        <h2 className="font-script text-gold mb-2" style={{ fontSize: 'clamp(2.2rem, 7vw, 4rem)' }}>
+        <h2 className="font-script text-gold mb-2" style={{ fontSize: 'clamp(1.8rem, 7vw, 4rem)' }}>
           Проживание
         </h2>
         <p className="font-serif text-charcoal/60 italic text-sm mb-6">

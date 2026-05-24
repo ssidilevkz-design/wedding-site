@@ -28,7 +28,7 @@ export default function OurPhoto() {
       transition={{ duration: 0.8 }}
     >
       <div className="section-wrapper text-center">
-        <h2 className="font-script text-gold mb-2" style={{ fontSize: 'clamp(2.2rem, 7vw, 4rem)' }}>
+        <h2 className="font-script text-gold mb-2" style={{ fontSize: 'clamp(1.8rem, 7vw, 4rem)' }}>
           Алёна & Сергей
         </h2>
         <div className="ornament-divider mb-10"><HeartSvg /></div>

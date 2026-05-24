@@ -33,7 +33,7 @@ export default function OrderOfTheDay() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         />
-        <h2 className="font-script text-gold" style={{ fontSize: 'clamp(2.2rem, 7vw, 4rem)' }}>
+        <h2 className="font-script text-gold" style={{ fontSize: 'clamp(1.8rem, 7vw, 4rem)' }}>
           Программа вечера
         </h2>
       </div>

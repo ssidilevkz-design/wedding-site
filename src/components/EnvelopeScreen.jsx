@@ -5,22 +5,22 @@ const SEGMENTS = [
   {
     text: 'Дорогой читатель\n',
     className: 'font-script text-gold block',
-    style: { fontSize: 'clamp(0.8rem, 4.2vw, 3.2rem)', lineHeight: 1.0 },
+    style: { fontSize: 'clamp(0.8rem, 5vw, 3.9rem)', lineHeight: 1.0 },
   },
   {
     text: 'стало известно, что в этом сезоне состоится долгожданное событие!\n\n',
     className: 'font-serif text-charcoal/65 block italic',
-    style: { fontSize: 'clamp(0.7rem, 3.2vw, 1.5rem)', fontWeight: 300, lineHeight: 1.3 },
+    style: { fontSize: 'clamp(0.65rem, 3.5vw, 1.8rem)', fontWeight: 300, lineHeight: 1.3 },
   },
   {
     text: 'свадьба Алёны и Сергея\n\n',
     className: 'font-script text-gold block',
-    style: { fontSize: 'clamp(0.8rem, 3.8vw, 2.8rem)', lineHeight: 1.0 },
+    style: { fontSize: 'clamp(0.8rem, 4.2vw, 3.3rem)', lineHeight: 1.0 },
   },
   {
     text: 'и, разумеется, без вас этот день не будет таким особенным!\nОни с нетерпением будут ждать вас на своем празднике!',
     className: 'font-serif text-charcoal/65 block italic',
-    style: { fontSize: 'clamp(0.7rem, 3.2vw, 1.5rem)', fontWeight: 300, lineHeight: 1.3 },
+    style: { fontSize: 'clamp(0.65rem, 3.5vw, 1.8rem)', fontWeight: 300, lineHeight: 1.3 },
   },
 ]
 
@@ -31,7 +31,7 @@ const SEG_OFFSETS = SEGMENTS.reduce((acc, seg, i) => {
 const TOTAL_CHARS = SEGMENTS.reduce((s, seg) => s + seg.text.length, 0)
 
 export default function EnvelopeScreen({ onOpen }) {
-  const [phase, setPhase] = useState('idle') // idle | video | end
+  const [phase, setPhase] = useState('idle')
   const [showHint, setShowHint] = useState(false)
   const [revealedCount, setRevealedCount] = useState(0)
   const audioRef = useRef(null)
@@ -77,12 +77,11 @@ export default function EnvelopeScreen({ onOpen }) {
   }
 
   function handleVideoEnd() {
-    // Transition to end image, then start audio + text
     setPhase('end')
     setTimeout(() => {
       audioRef.current?.play().catch(() => {})
       startReveal()
-    }, 600) // small delay so mail_end fades in first
+    }, 600)
   }
 
   return (
@@ -91,7 +90,7 @@ export default function EnvelopeScreen({ onOpen }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
     >
-      {/* ── Closed envelope ── */}
+      {/* Closed envelope */}
       <AnimatePresence>
         {phase === 'idle' && (
           <motion.img
@@ -106,7 +105,7 @@ export default function EnvelopeScreen({ onOpen }) {
         )}
       </AnimatePresence>
 
-      {/* ── Opening video ── */}
+      {/* Opening video */}
       <video
         ref={videoRef}
         src="/video/newvideo.mp4"
@@ -120,7 +119,7 @@ export default function EnvelopeScreen({ onOpen }) {
         onEnded={handleVideoEnd}
       />
 
-      {/* ── End frame + text ── */}
+      {/* End frame + text */}
       <AnimatePresence>
         {phase === 'end' && (
           <motion.div
@@ -130,7 +129,6 @@ export default function EnvelopeScreen({ onOpen }) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
           >
-            {/* mail_end.png as background */}
             <img
               src="/images/mail_end.png"
               alt=""
@@ -138,11 +136,11 @@ export default function EnvelopeScreen({ onOpen }) {
               draggable={false}
             />
 
-            {/* Text overlay — lower blank area of the letter */}
+            {/* Text overlay positioned inside the letter's blank area */}
             <div className="absolute inset-0 flex justify-center pt-[64vh] sm:pt-[54vh]">
               <div
                 className="text-center"
-                style={{ width: 'min(420px, 56vw)' }}
+                style={{ width: 'min(420px, 54vw)' }}
               >
                 <SyncedText revealedCount={revealedCount} />
               </div>
@@ -151,7 +149,7 @@ export default function EnvelopeScreen({ onOpen }) {
         )}
       </AnimatePresence>
 
-      {/* ── Skip button ── */}
+      {/* Skip button */}
       <button
         onClick={onOpen}
         className="absolute top-5 right-5 z-50 w-10 h-10 flex items-center justify-center rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300"
@@ -162,7 +160,7 @@ export default function EnvelopeScreen({ onOpen }) {
         </svg>
       </button>
 
-      {/* ── Hint ── */}
+      {/* Hint */}
       <AnimatePresence>
         {showHint && phase === 'idle' && (
           <div className="absolute inset-0 flex items-end justify-center pointer-events-none" style={{ paddingBottom: '6%' }}>
@@ -172,7 +170,7 @@ export default function EnvelopeScreen({ onOpen }) {
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2 }}
               className="font-sans tracking-[0.25em] uppercase whitespace-nowrap"
-              style={{ color: '#C8A96A', fontSize: 'clamp(1rem, 4.5vw, 2.2rem)' }}
+              style={{ color: '#C8A96A', fontSize: 'clamp(0.75rem, 4vw, 2.2rem)' }}
             >
               Нажмите, чтобы открыть
             </motion.p>

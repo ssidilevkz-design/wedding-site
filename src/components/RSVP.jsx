@@ -66,7 +66,7 @@ export default function RSVP() {
     >
       <div className="section-wrapper">
         <div className="text-center mb-10">
-          <h2 className="font-script text-gold" style={{ fontSize: 'clamp(2.2rem, 7vw, 4rem)' }}>
+          <h2 className="font-script text-gold" style={{ fontSize: 'clamp(1.8rem, 7vw, 4rem)' }}>
             Подтверждение участия
           </h2>
           <p className="font-serif text-charcoal/55 italic text-sm mt-2">

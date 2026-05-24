@@ -49,7 +49,7 @@ export default function Countdown() {
       </h2>
 
       <motion.div
-        className="grid grid-cols-2 gap-4 sm:grid-cols-4"
+        className="grid grid-cols-4 gap-2"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

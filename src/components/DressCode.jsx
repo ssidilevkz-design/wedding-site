@@ -51,7 +51,7 @@ export default function DressCode() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-          <CartoucheCard className="px-5 pb-8 sm:px-14 sm:pb-12 text-center" style={{ paddingTop: '2rem' }}>
+          <CartoucheCard className="px-12 pb-8 sm:px-14 sm:pb-12 text-center" style={{ paddingTop: '2rem' }}>
             <div>
               {/* Two text blocks */}
               <motion.div
@@ -62,17 +62,17 @@ export default function DressCode() {
                 viewport={{ once: true }}
               >
                 {/* Ladies */}
-                <motion.div variants={itemVariants} className="text-left sm:text-center">
+                <motion.div variants={itemVariants} className="text-center">
                   <p className="font-sans text-gold text-xs tracking-[0.25em] uppercase mb-3">Дамы</p>
-                  <p className="font-serif text-charcoal/75 leading-relaxed" style={{ fontSize: '0.97rem', fontWeight: 300 }}>
+                  <p className="font-serif text-charcoal/75 leading-relaxed" style={{ fontSize: 'clamp(0.8rem, 2.8vw, 0.97rem)', fontWeight: 300 }}>
                     Элегантные вечерние наряды в пастельных оттенках, струящиеся силуэты, летящие ткани и утончённые детали, подчёркивающие лёгкость и эстетику вечера.
                   </p>
                 </motion.div>
 
                 {/* Gentlemen */}
-                <motion.div variants={itemVariants} className="text-left sm:text-center">
+                <motion.div variants={itemVariants} className="text-center">
                   <p className="font-sans text-gold text-xs tracking-[0.25em] uppercase mb-3">Кавалеры</p>
-                  <p className="font-serif text-charcoal/75 leading-relaxed" style={{ fontSize: '0.97rem', fontWeight: 300 }}>
+                  <p className="font-serif text-charcoal/75 leading-relaxed" style={{ fontSize: 'clamp(0.8rem, 2.8vw, 0.97rem)', fontWeight: 300 }}>
                     Классические чёрные костюмы или смокинги. Также будет уместно сочетание белой рубашки с чёрными брюками — элегантно, сдержанно и в стилистике вечера.
                   </p>
                 </motion.div>
@@ -84,7 +84,7 @@ export default function DressCode() {
               {/* Tux rental note */}
               <motion.p
                 className="font-serif text-charcoal/55 italic leading-relaxed"
-                style={{ fontSize: '0.9rem', fontWeight: 300 }}
+                style={{ fontSize: 'clamp(0.75rem, 2.5vw, 0.9rem)', fontWeight: 300 }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}

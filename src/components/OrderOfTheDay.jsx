@@ -11,7 +11,7 @@ const events = [
 export default function OrderOfTheDay() {
   return (
     <motion.section
-      className="section-wrapper py-20"
+      className="section-wrapper py-14"
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}

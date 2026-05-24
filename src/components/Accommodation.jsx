@@ -20,7 +20,7 @@ const imgVariants = {
 export default function Accommodation() {
   return (
     <motion.section
-      className="py-20"
+      className="py-14"
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}

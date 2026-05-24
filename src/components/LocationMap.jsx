@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 export default function LocationMap() {
   return (
     <motion.section
-      className="py-20"
+      className="py-14"
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}

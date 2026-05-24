@@ -25,7 +25,7 @@ export default function Countdown() {
 
   return (
     <motion.section
-      className="py-20"
+      className="py-14"
       style={{ background: '#FAF6EE' }}
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export default function Countdown() {
       </motion.div>
 
       <motion.div
-        className="ornament-divider mt-10"
+        className="ornament-divider mt-6"
         initial={{ opacity: 0, scaleX: 0.3 }}
         whileInView={{ opacity: 1, scaleX: 1 }}
         viewport={{ once: true }}

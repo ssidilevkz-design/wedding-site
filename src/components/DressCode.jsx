@@ -13,7 +13,7 @@ const itemVariants = {
 export default function DressCode() {
   return (
     <motion.section
-      className="py-20"
+      className="py-14"
       style={{ background: '#FAF6EE' }}
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}

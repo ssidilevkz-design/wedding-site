@@ -15,13 +15,13 @@ export default function Hero() {
       {/* Images — natural proportions, anchored to bottom */}
       <div className="absolute bottom-0 left-0 w-full">
         <img
-          src="/images/day.png"
+          src="/images/day_new.png"
           alt=""
           aria-hidden="true"
           className="w-full block pointer-events-none select-none"
         />
         <motion.img
-          src="/images/night.png"
+          src="/images/night_new.png"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full block pointer-events-none select-none"

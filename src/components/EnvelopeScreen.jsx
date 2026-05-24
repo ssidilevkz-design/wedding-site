@@ -42,20 +42,6 @@ export default function EnvelopeScreen({ onOpen, audioRef }) {
 
   useEffect(() => {
     const t = setTimeout(() => setShowHint(true), 2000)
-
-    const audio = audioRef.current
-    if (audio) {
-      // Trigger onOpen when the in.mp3 intro part finishes
-      function handleTimeUpdate() {
-        if (audio.currentTime >= INTRO_DURATION) {
-          audio.removeEventListener('timeupdate', handleTimeUpdate)
-          setRevealedCount(TOTAL_CHARS)
-          setTimeout(onOpen, 1000)
-        }
-      }
-      audio.addEventListener('timeupdate', handleTimeUpdate)
-    }
-
     return () => {
       clearTimeout(t)
       cancelAnimationFrame(rafRef.current)
@@ -82,7 +68,19 @@ export default function EnvelopeScreen({ onOpen, audioRef }) {
   function handleVideoEnd() {
     setPhase('end')
     setTimeout(() => {
-      audioRef.current?.play().catch(() => {})
+      const audio = audioRef.current
+      if (!audio) return
+      audio.play().catch(() => {})
+
+      function handleTimeUpdate() {
+        if (audio.currentTime >= INTRO_DURATION) {
+          audio.removeEventListener('timeupdate', handleTimeUpdate)
+          setRevealedCount(TOTAL_CHARS)
+          setTimeout(onOpen, 1000)
+        }
+      }
+      audio.addEventListener('timeupdate', handleTimeUpdate)
+
       startReveal()
     }, 600)
   }

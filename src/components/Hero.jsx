@@ -29,6 +29,30 @@ export default function Hero() {
           animate={{ opacity: isNight ? 1 : 0 }}
           transition={{ duration: 5, ease: 'easeInOut' }}
         />
+
+        {/* Day/Night toggle — top-right corner of the image */}
+        <motion.button
+          onClick={() => setIsNight(n => !n)}
+          aria-label={isNight ? 'Переключить на день' : 'Переключить на ночь'}
+          className="absolute top-4 right-4 z-30 flex items-center gap-0 rounded-full px-1.5 py-1.5 cursor-pointer"
+          style={{ background: '#E8DED0', width: 76, height: 38 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+        >
+          <motion.span
+            className="absolute rounded-full bg-white shadow-sm"
+            style={{ width: 30, height: 30, top: 4 }}
+            animate={{ left: isNight ? 38 : 6 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+          />
+          <span className="relative z-10 flex items-center justify-center" style={{ width: 32, height: 30 }}>
+            <SunIcon active={!isNight} />
+          </span>
+          <span className="relative z-10 flex items-center justify-center" style={{ width: 32, height: 30 }}>
+            <MoonIcon active={isNight} />
+          </span>
+        </motion.button>
       </div>
 
       {/* Text — top of section */}
@@ -59,30 +83,6 @@ export default function Hero() {
             </motion.h1>
         </div>
       </motion.div>
-
-      {/* Day/Night toggle */}
-      <motion.button
-        onClick={() => setIsNight(n => !n)}
-        aria-label={isNight ? 'Переключить на день' : 'Переключить на ночь'}
-        className="absolute top-6 right-6 z-30 flex items-center gap-0 rounded-full px-1.5 py-1.5 cursor-pointer"
-        style={{ background: '#E8DED0', width: 76, height: 38 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.8 }}
-      >
-        <motion.span
-          className="absolute rounded-full bg-white shadow-sm"
-          style={{ width: 30, height: 30, top: 4 }}
-          animate={{ left: isNight ? 38 : 6 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-        />
-        <span className="relative z-10 flex items-center justify-center" style={{ width: 32, height: 30 }}>
-          <SunIcon active={!isNight} />
-        </span>
-        <span className="relative z-10 flex items-center justify-center" style={{ width: 32, height: 30 }}>
-          <MoonIcon active={isNight} />
-        </span>
-      </motion.button>
 
       {/* Scroll indicator */}
       <motion.div

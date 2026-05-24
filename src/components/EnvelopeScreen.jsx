@@ -163,7 +163,7 @@ export default function EnvelopeScreen({ onOpen }) {
       {/* Hint */}
       <AnimatePresence>
         {showHint && phase === 'idle' && (
-          <div className="absolute inset-0 flex items-end justify-center pointer-events-none" style={{ paddingBottom: '30%' }}>
+          <div className="absolute inset-0 flex items-end justify-center pointer-events-none" style={{ paddingBottom: '45%' }}>
             <motion.p
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: [0, 1, 0.6, 1], y: 0 }}

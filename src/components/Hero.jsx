@@ -42,7 +42,7 @@ export default function Hero() {
         <div className="text-center">
             <motion.p
               className="font-sans tracking-[0.35em] uppercase mb-3"
-              style={{ fontSize: 'clamp(0.6rem, 1.5vw, 0.8rem)' }}
+              style={{ fontSize: 'clamp(0.78rem, 2vw, 1.05rem)' }}
               animate={{ color: isNight ? 'rgba(255,255,255,0.7)' : 'rgba(58,53,48,0.5)' }}
               transition={{ duration: 4, ease: 'easeInOut' }}
             >
@@ -51,7 +51,7 @@ export default function Hero() {
 
             <motion.h1
               className="font-script leading-none"
-              style={{ fontSize: 'clamp(2rem, 8vw, 8rem)' }}
+              style={{ fontSize: 'clamp(2.6rem, 10.4vw, 10.4rem)' }}
               animate={{ color: isNight ? '#FFFFFF' : '#C8A96A' }}
               transition={{ duration: 4, ease: 'easeInOut' }}
             >

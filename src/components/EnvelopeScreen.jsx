@@ -140,7 +140,7 @@ export default function EnvelopeScreen({ onOpen }) {
             <div className="absolute inset-0 flex justify-center pt-[52vh] sm:pt-[54vh]">
               <div
                 className="text-center"
-                style={{ width: 'min(420px, 43vw)' }}
+                style={{ width: 'min(420px, 43vw)', marginLeft: '4vw' }}
               >
                 <SyncedText revealedCount={revealedCount} />
               </div>

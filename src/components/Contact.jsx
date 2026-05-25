@@ -3,14 +3,14 @@ import { motion } from 'framer-motion'
 export default function Contact() {
   return (
     <motion.section
-      className="py-14"
+      className="py-14 flex justify-center"
       style={{ background: '#FAF6EE' }}
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.8 }}
     >
-      <div className="relative mx-auto" style={{ maxWidth: 460 }}>
+      <div className="relative mx-auto flex flex-col items-center" style={{ maxWidth: 460, width: '100%' }}>
         <img
           src="/images/zerkalo.png"
           alt=""

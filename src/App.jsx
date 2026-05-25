@@ -10,6 +10,7 @@ import DressCode from './components/DressCode'
 import Accommodation from './components/Accommodation'
 import OurPhoto from './components/OurPhoto'
 import PSNote from './components/PSNote'
+import Contact from './components/Contact'
 import RSVP from './components/RSVP'
 import MusicPlayer from './components/MusicPlayer'
 
@@ -52,6 +53,7 @@ export default function App() {
             <RSVP />
             <OurPhoto />
             <PSNote />
+            <Contact />
             <Footer />
             <MusicPlayer audioRef={audioRef} />
           </motion.div>

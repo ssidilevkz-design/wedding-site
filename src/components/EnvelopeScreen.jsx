@@ -150,6 +150,24 @@ export default function EnvelopeScreen({ onOpen, audioRef }) {
         )}
       </AnimatePresence>
 
+      {/* Skip button */}
+      <button
+        onClick={() => {
+          const audio = audioRef.current
+          if (audio) {
+            audio.currentTime = 19
+            audio.play().catch(() => {})
+          }
+          onOpen()
+        }}
+        className="absolute top-5 right-5 z-50 w-10 h-10 flex items-center justify-center rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300"
+        aria-label="Пропустить"
+      >
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M2 2L16 16M16 2L2 16" stroke="#C8A96A" strokeWidth="1.5" strokeLinecap="round"/>
+        </svg>
+      </button>
+
       {/* Hint */}
       <AnimatePresence>
         {showHint && phase === 'idle' && (

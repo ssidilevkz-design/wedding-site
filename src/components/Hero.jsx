@@ -86,17 +86,17 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 1 }}
       >
         <motion.div
-          animate={{ y: [0, 7, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
         >
-          <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
-            <path d="M8 0 L8 20 M2 14 L8 20 L14 14" stroke="#C8A96A" strokeWidth="1" strokeOpacity="0.6" />
+          <svg width="28" height="36" viewBox="0 0 28 36" fill="none">
+            <path d="M14 0 L14 28 M3 20 L14 31 L25 20" stroke="#C8A96A" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </motion.div>
       </motion.div>

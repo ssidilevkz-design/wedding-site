@@ -95,8 +95,8 @@ export default function Hero() {
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
         >
-          <svg width="28" height="36" viewBox="0 0 28 36" fill="none">
-            <path d="M14 0 L14 28 M3 20 L14 31 L25 20" stroke="#C8A96A" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+          <svg width="28" height="20" viewBox="0 0 28 20" fill="none">
+            <path d="M3 3 L14 16 L25 3" stroke="#C8A96A" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </motion.div>
       </motion.div>
